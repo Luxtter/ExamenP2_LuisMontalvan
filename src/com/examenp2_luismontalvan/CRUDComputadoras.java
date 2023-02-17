@@ -26,21 +26,103 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Background = new javax.swing.JPanel();
+        BtnListar = new javax.swing.JButton();
+        BtnAgregar = new javax.swing.JButton();
+        BtnElimiar = new javax.swing.JButton();
+        BtnIngresar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Background.setBackground(new java.awt.Color(0, 0, 0));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BtnListar.setText("Listar");
+        BtnListar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnListarMouseClicked(evt);
+            }
+        });
+        Background.add(BtnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 380, 100));
+
+        BtnAgregar.setText("Agregar Computadora");
+        BtnAgregar.setMaximumSize(new java.awt.Dimension(250, 50));
+        BtnAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnAgregarMouseClicked(evt);
+            }
+        });
+        Background.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 380, 100));
+
+        BtnElimiar.setText("Eliminar Computadora");
+        BtnElimiar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnElimiarMouseClicked(evt);
+            }
+        });
+        BtnElimiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnElimiarActionPerformed(evt);
+            }
+        });
+        Background.add(BtnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 380, 100));
+
+        BtnIngresar.setText("Eliminar Computadora");
+        BtnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnIngresarMouseClicked(evt);
+            }
+        });
+        BtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIngresarActionPerformed(evt);
+            }
+        });
+        Background.add(BtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 380, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnIngresarActionPerformed
+
+    private void BtnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarMouseClicked
+        BtnAgregar.setVisible(false);
+        BtnIngresar.setVisible(false);
+        BtnListar.setVisible(false);
+    }//GEN-LAST:event_BtnAgregarMouseClicked
+
+    private void BtnListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnListarMouseClicked
+        BtnAgregar.setVisible(false);
+        BtnIngresar.setVisible(false);
+        BtnListar.setVisible(false);
+    }//GEN-LAST:event_BtnListarMouseClicked
+
+    private void BtnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarMouseClicked
+        BtnAgregar.setVisible(false);
+        BtnIngresar.setVisible(false);
+        BtnListar.setVisible(false);
+    }//GEN-LAST:event_BtnIngresarMouseClicked
+
+    private void BtnElimiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnElimiarMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnElimiarMouseClicked
+
+    private void BtnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnElimiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnElimiarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +160,11 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Background;
+    private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnElimiar;
+    private javax.swing.JButton BtnIngresar;
+    private javax.swing.JButton BtnListar;
     // End of variables declaration//GEN-END:variables
+    
 }
