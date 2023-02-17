@@ -4,6 +4,8 @@
  */
 package com.examenp2_luismontalvan;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luism
@@ -37,7 +39,11 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         Background = new javax.swing.JPanel();
+        jPanelVacio2 = new javax.swing.JPanel();
         jPanelVacio = new javax.swing.JPanel();
+        jPanelTipoPC = new javax.swing.JPanel();
+        BtnEscritorio = new javax.swing.JButton();
+        BtnLaptop = new javax.swing.JButton();
         jPanelHoriz = new javax.swing.JPanel();
         BtnAgregar = new javax.swing.JButton();
         BtnListar = new javax.swing.JButton();
@@ -60,6 +66,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        BtnAgregarPC = new javax.swing.JButton();
         jPanelListarTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -74,9 +81,6 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jTextField5 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jPanelTipoPC = new javax.swing.JPanel();
-        BtnEscritorio = new javax.swing.JButton();
-        BtnLaptop = new javax.swing.JButton();
 
         jLabel6.setText("jLabel1");
 
@@ -86,6 +90,19 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         Background.setBackground(new java.awt.Color(0, 0, 0));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout jPanelVacio2Layout = new javax.swing.GroupLayout(jPanelVacio2);
+        jPanelVacio2.setLayout(jPanelVacio2Layout);
+        jPanelVacio2Layout.setHorizontalGroup(
+            jPanelVacio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelVacio2Layout.setVerticalGroup(
+            jPanelVacio2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 413, Short.MAX_VALUE)
+        );
+
+        Background.add(jPanelVacio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jPanelVacio.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -101,6 +118,36 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         );
 
         Background.add(jPanelVacio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jPanelTipoPC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        BtnEscritorio.setText("Escritorio");
+        BtnEscritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnEscritorioMouseClicked(evt);
+            }
+        });
+        BtnEscritorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEscritorioActionPerformed(evt);
+            }
+        });
+        jPanelTipoPC.add(BtnEscritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 84, 200, 101));
+
+        BtnLaptop.setText("Laptop");
+        BtnLaptop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnLaptopMouseClicked(evt);
+            }
+        });
+        BtnLaptop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLaptopActionPerformed(evt);
+            }
+        });
+        jPanelTipoPC.add(BtnLaptop, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 240, 200, 99));
+
+        Background.add(jPanelTipoPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
 
         jPanelHoriz.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -290,12 +337,19 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        BtnAgregarPC.setText("Agregar");
+        BtnAgregarPC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnAgregarPCMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelEscritorioLayout = new javax.swing.GroupLayout(jPanelEscritorio);
         jPanelEscritorio.setLayout(jPanelEscritorioLayout);
         jPanelEscritorioLayout.setHorizontalGroup(
             jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEscritorioLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
+                .addGap(97, 97, 97)
                 .addGroup(jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField2)
                     .addComponent(jTextField3)
@@ -308,28 +362,34 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 32, Short.MAX_VALUE)))
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGap(247, 247, 247))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEscritorioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnAgregarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(190, 190, 190))
         );
         jPanelEscritorioLayout.setVerticalGroup(
             jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEscritorioLayout.createSequentialGroup()
-                .addGap(115, 115, 115)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEscritorioLayout.createSequentialGroup()
+                .addContainerGap(257, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(BtnAgregarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
         );
 
         Background.add(jPanelEscritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
@@ -448,48 +508,6 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         Background.add(jPanelLaptop, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
 
-        BtnEscritorio.setText("Escritorio");
-        BtnEscritorio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnEscritorioMouseClicked(evt);
-            }
-        });
-        BtnEscritorio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnEscritorioActionPerformed(evt);
-            }
-        });
-
-        BtnLaptop.setText("Laptop");
-        BtnLaptop.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnLaptopActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelTipoPCLayout = new javax.swing.GroupLayout(jPanelTipoPC);
-        jPanelTipoPC.setLayout(jPanelTipoPCLayout);
-        jPanelTipoPCLayout.setHorizontalGroup(
-            jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTipoPCLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(146, Short.MAX_VALUE))
-        );
-        jPanelTipoPCLayout.setVerticalGroup(
-            jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTipoPCLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(BtnEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                .addGap(55, 55, 55)
-                .addComponent(BtnLaptop, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                .addGap(81, 81, 81))
-        );
-
-        Background.add(jPanelTipoPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -509,7 +527,9 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnIngresarActionPerformed
 
     private void BtnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarMouseClicked
+        
         jPanelTipoPC.setVisible(true);
+        
         
     }//GEN-LAST:event_BtnAgregarMouseClicked
 
@@ -545,6 +565,16 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jPanelTipoPC.setVisible(false);
         jPanelEscritorio.setVisible(true);
     }//GEN-LAST:event_BtnEscritorioMouseClicked
+
+    private void BtnLaptopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnLaptopMouseClicked
+        jPanelTipoPC.setVisible(false);
+        jPanelLaptop.setVisible(true);
+    }//GEN-LAST:event_BtnLaptopMouseClicked
+
+    private void BtnAgregarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarPCMouseClicked
+        JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
+        jPanelEscritorio.setVisible(false);
+    }//GEN-LAST:event_BtnAgregarPCMouseClicked
 
     /**
      * @param args the command line arguments
@@ -584,6 +614,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnAgregarPC;
     private javax.swing.JButton BtnElimiar;
     private javax.swing.JButton BtnEscritorio;
     private javax.swing.JButton BtnIngresar;
@@ -618,6 +649,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelListarTabla;
     private javax.swing.JPanel jPanelTipoPC;
     private javax.swing.JPanel jPanelVacio;
+    private javax.swing.JPanel jPanelVacio2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
