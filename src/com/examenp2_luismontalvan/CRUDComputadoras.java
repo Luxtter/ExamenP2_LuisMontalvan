@@ -15,6 +15,14 @@ public class CRUDComputadoras extends javax.swing.JFrame {
      */
     public CRUDComputadoras() {
         initComponents();
+        jPanelEscritorio.setVisible(false);
+        jPanelLaptop.setVisible(false);
+        jPanelAgregar.setVisible(false);
+        jPanelListarTabla.setVisible(false);
+        jPanelEliminar.setVisible(false);
+        jPanelTipoPC.setVisible(false);
+        jPanelListar.setVisible(false);
+        jPanelEliminarPC.setVisible(false);
     }
 
     /**
@@ -26,24 +34,75 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         Background = new javax.swing.JPanel();
-        BtnListar = new javax.swing.JButton();
+        jPanelVacio = new javax.swing.JPanel();
+        jPanelHoriz = new javax.swing.JPanel();
         BtnAgregar = new javax.swing.JButton();
+        BtnListar = new javax.swing.JButton();
         BtnElimiar = new javax.swing.JButton();
         BtnIngresar = new javax.swing.JButton();
+        jPanelAgregar = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanelListar = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanelEliminar = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanelIngresar = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jPanelEscritorio = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jPanelListarTabla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanelEliminarPC = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        PanelIngresar = new javax.swing.JPanel();
+        jPanelLaptop = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jPanelTipoPC = new javax.swing.JPanel();
+        BtnEscritorio = new javax.swing.JButton();
+        BtnLaptop = new javax.swing.JButton();
+
+        jLabel6.setText("jLabel1");
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Background.setBackground(new java.awt.Color(0, 0, 0));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BtnListar.setText("Listar");
-        BtnListar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BtnListarMouseClicked(evt);
-            }
-        });
-        Background.add(BtnListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 380, 100));
+        jPanelVacio.setBackground(new java.awt.Color(0, 0, 204));
+
+        javax.swing.GroupLayout jPanelVacioLayout = new javax.swing.GroupLayout(jPanelVacio);
+        jPanelVacio.setLayout(jPanelVacioLayout);
+        jPanelVacioLayout.setHorizontalGroup(
+            jPanelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+        jPanelVacioLayout.setVerticalGroup(
+            jPanelVacioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        Background.add(jPanelVacio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jPanelHoriz.setBackground(new java.awt.Color(0, 0, 204));
 
         BtnAgregar.setText("Agregar Computadora");
         BtnAgregar.setMaximumSize(new java.awt.Dimension(250, 50));
@@ -52,7 +111,18 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 BtnAgregarMouseClicked(evt);
             }
         });
-        Background.add(BtnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 380, 100));
+        BtnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAgregarActionPerformed(evt);
+            }
+        });
+
+        BtnListar.setText("Listar");
+        BtnListar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnListarMouseClicked(evt);
+            }
+        });
 
         BtnElimiar.setText("Eliminar Computadora");
         BtnElimiar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,9 +135,8 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 BtnElimiarActionPerformed(evt);
             }
         });
-        Background.add(BtnElimiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 380, 100));
 
-        BtnIngresar.setText("Eliminar Computadora");
+        BtnIngresar.setText("Ingresar Computadora");
         BtnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BtnIngresarMouseClicked(evt);
@@ -78,7 +147,348 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 BtnIngresarActionPerformed(evt);
             }
         });
-        Background.add(BtnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 380, 100));
+
+        javax.swing.GroupLayout jPanelHorizLayout = new javax.swing.GroupLayout(jPanelHoriz);
+        jPanelHoriz.setLayout(jPanelHorizLayout);
+        jPanelHorizLayout.setHorizontalGroup(
+            jPanelHorizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHorizLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(jPanelHorizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnElimiar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelHorizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(BtnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                        .addComponent(BtnListar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(140, 140, 140))
+        );
+        jPanelHorizLayout.setVerticalGroup(
+            jPanelHorizLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelHorizLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(BtnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnElimiar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        Background.add(jPanelHoriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 150, 520));
+
+        jPanelAgregar.setBackground(new java.awt.Color(0, 0, 204));
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Agregar COmputadora");
+        jLabel2.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        javax.swing.GroupLayout jPanelAgregarLayout = new javax.swing.GroupLayout(jPanelAgregar);
+        jPanelAgregar.setLayout(jPanelAgregarLayout);
+        jPanelAgregarLayout.setHorizontalGroup(
+            jPanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAgregarLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addGap(108, 108, 108))
+        );
+        jPanelAgregarLayout.setVerticalGroup(
+            jPanelAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAgregarLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addGap(37, 37, 37))
+        );
+
+        Background.add(jPanelAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jPanelListar.setBackground(new java.awt.Color(0, 0, 204));
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Listar");
+        jLabel3.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        javax.swing.GroupLayout jPanelListarLayout = new javax.swing.GroupLayout(jPanelListar);
+        jPanelListar.setLayout(jPanelListarLayout);
+        jPanelListarLayout.setHorizontalGroup(
+            jPanelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListarLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addGap(108, 108, 108))
+        );
+        jPanelListarLayout.setVerticalGroup(
+            jPanelListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListarLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addGap(37, 37, 37))
+        );
+
+        Background.add(jPanelListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jPanelEliminar.setBackground(new java.awt.Color(0, 0, 204));
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Agregar Computadora");
+        jLabel4.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        javax.swing.GroupLayout jPanelEliminarLayout = new javax.swing.GroupLayout(jPanelEliminar);
+        jPanelEliminar.setLayout(jPanelEliminarLayout);
+        jPanelEliminarLayout.setHorizontalGroup(
+            jPanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEliminarLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addGap(108, 108, 108))
+        );
+        jPanelEliminarLayout.setVerticalGroup(
+            jPanelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEliminarLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addGap(37, 37, 37))
+        );
+
+        Background.add(jPanelEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jPanelIngresar.setBackground(new java.awt.Color(0, 0, 204));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Ingresar a Computadora");
+        jLabel5.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        javax.swing.GroupLayout jPanelIngresarLayout = new javax.swing.GroupLayout(jPanelIngresar);
+        jPanelIngresar.setLayout(jPanelIngresarLayout);
+        jPanelIngresarLayout.setHorizontalGroup(
+            jPanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIngresarLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                .addGap(108, 108, 108))
+        );
+        jPanelIngresarLayout.setVerticalGroup(
+            jPanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelIngresarLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addGap(37, 37, 37))
+        );
+
+        Background.add(jPanelIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jLabel7.setText("Ram");
+
+        jLabel8.setText("Almacenamiento");
+
+        jLabel9.setText("Tipo de almacenamiento");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel10.setText("Tarjeta Grafica");
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanelEscritorioLayout = new javax.swing.GroupLayout(jPanelEscritorio);
+        jPanelEscritorio.setLayout(jPanelEscritorioLayout);
+        jPanelEscritorioLayout.setHorizontalGroup(
+            jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEscritorioLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField3)
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelEscritorioLayout.createSequentialGroup()
+                        .addGroup(jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 32, Short.MAX_VALUE)))
+                .addContainerGap(267, Short.MAX_VALUE))
+        );
+        jPanelEscritorioLayout.setVerticalGroup(
+            jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEscritorioLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
+        );
+
+        Background.add(jPanelEscritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanelListarTablaLayout = new javax.swing.GroupLayout(jPanelListarTabla);
+        jPanelListarTabla.setLayout(jPanelListarTablaLayout);
+        jPanelListarTablaLayout.setHorizontalGroup(
+            jPanelListarTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+        );
+        jPanelListarTablaLayout.setVerticalGroup(
+            jPanelListarTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelListarTablaLayout.createSequentialGroup()
+                .addGap(0, 71, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        Background.add(jPanelListarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel1.setText("Computadora a Eliminar");
+
+        javax.swing.GroupLayout jPanelEliminarPCLayout = new javax.swing.GroupLayout(jPanelEliminarPC);
+        jPanelEliminarPC.setLayout(jPanelEliminarPCLayout);
+        jPanelEliminarPCLayout.setHorizontalGroup(
+            jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEliminarPCLayout.createSequentialGroup()
+                .addGap(120, 120, 120)
+                .addGroup(jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(203, Short.MAX_VALUE))
+        );
+        jPanelEliminarPCLayout.setVerticalGroup(
+            jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEliminarPCLayout.createSequentialGroup()
+                .addGap(142, 142, 142)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(221, Short.MAX_VALUE))
+        );
+
+        Background.add(jPanelEliminarPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
+
+        javax.swing.GroupLayout PanelIngresarLayout = new javax.swing.GroupLayout(PanelIngresar);
+        PanelIngresar.setLayout(PanelIngresarLayout);
+        PanelIngresarLayout.setHorizontalGroup(
+            PanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+        PanelIngresarLayout.setVerticalGroup(
+            PanelIngresarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 420, Short.MAX_VALUE)
+        );
+
+        Background.add(PanelIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
+
+        jLabel11.setText("Marca");
+
+        jLabel12.setText("Definicion de Pantalla");
+
+        jLabel13.setText("RGB");
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        javax.swing.GroupLayout jPanelLaptopLayout = new javax.swing.GroupLayout(jPanelLaptop);
+        jPanelLaptop.setLayout(jPanelLaptopLayout);
+        jPanelLaptopLayout.setHorizontalGroup(
+            jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLaptopLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5)
+                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelLaptopLayout.createSequentialGroup()
+                        .addGroup(jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))
+                        .addGap(0, 39, Short.MAX_VALUE)))
+                .addContainerGap(274, Short.MAX_VALUE))
+        );
+        jPanelLaptopLayout.setVerticalGroup(
+            jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelLaptopLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
+        );
+
+        Background.add(jPanelLaptop, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
+
+        BtnEscritorio.setText("Escritorio");
+        BtnEscritorio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnEscritorioMouseClicked(evt);
+            }
+        });
+        BtnEscritorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEscritorioActionPerformed(evt);
+            }
+        });
+
+        BtnLaptop.setText("Laptop");
+        BtnLaptop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnLaptopActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelTipoPCLayout = new javax.swing.GroupLayout(jPanelTipoPC);
+        jPanelTipoPC.setLayout(jPanelTipoPCLayout);
+        jPanelTipoPCLayout.setHorizontalGroup(
+            jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTipoPCLayout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BtnEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+        jPanelTipoPCLayout.setVerticalGroup(
+            jPanelTipoPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTipoPCLayout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(BtnEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                .addGap(55, 55, 55)
+                .addComponent(BtnLaptop, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                .addGap(81, 81, 81))
+        );
+
+        Background.add(jPanelTipoPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,30 +509,42 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnIngresarActionPerformed
 
     private void BtnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarMouseClicked
-        BtnAgregar.setVisible(false);
-        BtnIngresar.setVisible(false);
-        BtnListar.setVisible(false);
+        jPanelTipoPC.setVisible(true);
+        
     }//GEN-LAST:event_BtnAgregarMouseClicked
 
     private void BtnListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnListarMouseClicked
-        BtnAgregar.setVisible(false);
-        BtnIngresar.setVisible(false);
-        BtnListar.setVisible(false);
+        
     }//GEN-LAST:event_BtnListarMouseClicked
 
     private void BtnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarMouseClicked
-        BtnAgregar.setVisible(false);
-        BtnIngresar.setVisible(false);
-        BtnListar.setVisible(false);
+        
     }//GEN-LAST:event_BtnIngresarMouseClicked
 
     private void BtnElimiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnElimiarMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_BtnElimiarMouseClicked
 
     private void BtnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnElimiarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnElimiarActionPerformed
+
+    private void BtnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAgregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnAgregarActionPerformed
+
+    private void BtnLaptopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLaptopActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnLaptopActionPerformed
+
+    private void BtnEscritorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEscritorioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEscritorioActionPerformed
+
+    private void BtnEscritorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEscritorioMouseClicked
+        jPanelTipoPC.setVisible(false);
+        jPanelEscritorio.setVisible(true);
+    }//GEN-LAST:event_BtnEscritorioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -163,8 +585,46 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JButton BtnAgregar;
     private javax.swing.JButton BtnElimiar;
+    private javax.swing.JButton BtnEscritorio;
     private javax.swing.JButton BtnIngresar;
+    private javax.swing.JButton BtnLaptop;
     private javax.swing.JButton BtnListar;
+    private javax.swing.JPanel PanelIngresar;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanelAgregar;
+    private javax.swing.JPanel jPanelEliminar;
+    private javax.swing.JPanel jPanelEliminarPC;
+    private javax.swing.JPanel jPanelEscritorio;
+    private javax.swing.JPanel jPanelHoriz;
+    private javax.swing.JPanel jPanelIngresar;
+    private javax.swing.JPanel jPanelLaptop;
+    private javax.swing.JPanel jPanelListar;
+    private javax.swing.JPanel jPanelListarTabla;
+    private javax.swing.JPanel jPanelTipoPC;
+    private javax.swing.JPanel jPanelVacio;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
     
 }
