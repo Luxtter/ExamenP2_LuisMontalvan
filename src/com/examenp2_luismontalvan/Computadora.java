@@ -9,7 +9,7 @@ package com.examenp2_luismontalvan;
  * @author luism
  */
 public abstract class Computadora {
-    private String host, ip, mask;
+    protected String host, ip, mask;
 
     public Computadora() {
     }

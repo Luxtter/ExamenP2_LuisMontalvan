@@ -9,7 +9,7 @@ package com.examenp2_luismontalvan;
  * @author luism
  */
 public class Escritorio extends Computadora{
-    private int ram, storage;
+    private String ram, storage;
     private String typeStorage, resp;
     private boolean gpu;
 
@@ -17,7 +17,7 @@ public class Escritorio extends Computadora{
         super();
     }
 
-    public Escritorio(int ram, int storage, String typeStorage, String resp, boolean gpu, String host, String ip, String mask) {
+    public Escritorio(String ram, String storage, String typeStorage, String resp, boolean gpu, String host, String ip, String mask) {
         super(host, ip, mask);
         this.ram = ram;
         this.storage = storage;
@@ -26,22 +26,56 @@ public class Escritorio extends Computadora{
         this.gpu = gpu;
     }
 
-    
+    public String getResp() {
+        return resp;
+    }
 
+    public void setResp(String resp) {
+        this.resp = resp;
+    }
 
-    public int getRam() {
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getMask() {
+        return mask;
+    }
+
+    public void setMask(String mask) {
+        this.mask = mask;
+    }
+
+    public String getRam() {
         return ram;
     }
 
-    public void setRam(int ram) {
+    
+    
+
+    
+
+    public void setRam(String ram) {
         this.ram = ram;
     }
 
-    public int getStorage() {
+    public String getStorage() {
         return storage;
     }
 
-    public void setStorage(int storage) {
+    public void setStorage(String storage) {
         this.storage = storage;
     }
 

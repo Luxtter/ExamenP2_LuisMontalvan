@@ -4,6 +4,8 @@
  */
 package com.examenp2_luismontalvan;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,7 +13,10 @@ import javax.swing.JOptionPane;
  * @author luism
  */
 public class CRUDComputadoras extends javax.swing.JFrame {
-
+    ArrayList<Computadora> computadoras = new ArrayList();
+    String host1 = "";
+    String ip = "";
+    String mask = "";
     /**
      * Creates new form CRUDComputadoras
      */
@@ -25,6 +30,8 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jPanelTipoPC.setVisible(false);
         jPanelListar.setVisible(false);
         jPanelEliminarPC.setVisible(false);
+        jPanelComputadoraAgregar.setVisible(false);
+        
     }
 
     /**
@@ -38,9 +45,19 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         jLabel6 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
         Background = new javax.swing.JPanel();
         jPanelVacio2 = new javax.swing.JPanel();
         jPanelVacio = new javax.swing.JPanel();
+        jPanelComputadoraAgregar = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jTFHost = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jTFIP = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jTFMask = new javax.swing.JTextField();
+        BtnSiguiente = new javax.swing.JButton();
         jPanelTipoPC = new javax.swing.JPanel();
         BtnEscritorio = new javax.swing.JButton();
         BtnLaptop = new javax.swing.JButton();
@@ -59,13 +76,13 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanelEscritorio = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTFRam = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTFStorage = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jCBTypeStrorage = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        jCBGPU = new javax.swing.JComboBox<>();
         BtnAgregarPC = new javax.swing.JButton();
         jPanelListarTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -76,15 +93,20 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         PanelIngresar = new javax.swing.JPanel();
         jPanelLaptop = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jTFMarca = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        jTFResolution = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jCBRGB = new javax.swing.JComboBox<>();
+        BtnAgregarLaptop = new javax.swing.JButton();
 
         jLabel6.setText("jLabel1");
 
         jTextField1.setText("jTextField1");
+
+        jLabel15.setText("jLabel14");
+
+        jTextField3.setText("jTextField2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,6 +140,73 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         );
 
         Background.add(jPanelVacio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
+
+        jLabel14.setText("Host");
+
+        jTFHost.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFHostActionPerformed(evt);
+            }
+        });
+
+        jLabel16.setText("IP");
+
+        jLabel17.setText("Mask");
+
+        jTFMask.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFMaskActionPerformed(evt);
+            }
+        });
+
+        BtnSiguiente.setText("Siguiente");
+        BtnSiguiente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnSiguienteMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelComputadoraAgregarLayout = new javax.swing.GroupLayout(jPanelComputadoraAgregar);
+        jPanelComputadoraAgregar.setLayout(jPanelComputadoraAgregarLayout);
+        jPanelComputadoraAgregarLayout.setHorizontalGroup(
+            jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
+                .addGroup(jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addGroup(jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTFHost, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFIP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFMask, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
+                        .addGap(177, 177, 177)
+                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(204, Short.MAX_VALUE))
+        );
+        jPanelComputadoraAgregarLayout.setVerticalGroup(
+            jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFHost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFMask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(157, Short.MAX_VALUE))
+        );
+
+        Background.add(jPanelComputadoraAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
 
         jPanelTipoPC.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -331,11 +420,11 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         jLabel9.setText("Tipo de almacenamiento");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBTypeStrorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "HDD", "SSD"}));
 
         jLabel10.setText("Tarjeta Grafica");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBGPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No"}));
 
         BtnAgregarPC.setText("Agregar");
         BtnAgregarPC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -351,10 +440,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
             .addGroup(jPanelEscritorioLayout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addGroup(jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFRam)
+                    .addComponent(jTFStorage)
+                    .addComponent(jCBTypeStrorage, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCBGPU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelEscritorioLayout.createSequentialGroup()
                         .addGroup(jPanelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -374,19 +463,19 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 .addContainerGap(257, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFRam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFStorage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCBTypeStrorage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCBGPU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnAgregarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(120, 120, 120))
@@ -468,7 +557,14 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         jLabel13.setText("RGB");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBRGB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No" }));
+
+        BtnAgregarLaptop.setText("Agregar");
+        BtnAgregarLaptop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnAgregarLaptopMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLaptopLayout = new javax.swing.GroupLayout(jPanelLaptop);
         jPanelLaptop.setLayout(jPanelLaptopLayout);
@@ -477,9 +573,9 @@ public class CRUDComputadoras extends javax.swing.JFrame {
             .addGroup(jPanelLaptopLayout.createSequentialGroup()
                 .addGap(77, 77, 77)
                 .addGroup(jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5)
-                    .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTFMarca)
+                    .addComponent(jTFResolution)
+                    .addComponent(jCBRGB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelLaptopLayout.createSequentialGroup()
                         .addGroup(jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -487,6 +583,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addGap(0, 39, Short.MAX_VALUE)))
                 .addContainerGap(274, Short.MAX_VALUE))
+            .addGroup(jPanelLaptopLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(BtnAgregarLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelLaptopLayout.setVerticalGroup(
             jPanelLaptopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,16 +594,18 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 .addGap(115, 115, 115)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFMarca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTFResolution, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addComponent(jCBRGB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnAgregarLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         Background.add(jPanelLaptop, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
@@ -528,7 +630,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
     private void BtnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarMouseClicked
         
-        jPanelTipoPC.setVisible(true);
+        jPanelComputadoraAgregar.setVisible(true);
         
         
     }//GEN-LAST:event_BtnAgregarMouseClicked
@@ -572,9 +674,45 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLaptopMouseClicked
 
     private void BtnAgregarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarPCMouseClicked
+        computadoras.add(new Escritorio());        
+        ((Escritorio)computadoras.get(0)).setHost(host1);
+        ((Escritorio)computadoras.get(0)).setIp(ip);
+        ((Escritorio)computadoras.get(0)).setMask(mask);
+        ((Escritorio)computadoras.get(0)).setRam(String.valueOf(jTFRam.getText()));
+        ((Escritorio)computadoras.get(0)).setStorage(String.valueOf(jTFStorage.getText()));
+        ((Escritorio)computadoras.get(0)).setTypeStorage(String.valueOf(jCBTypeStrorage.getSelectedItem()));
+        ((Escritorio)computadoras.get(0)).setResp(String.valueOf(jCBGPU.getSelectedItem()));
         JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
         jPanelEscritorio.setVisible(false);
     }//GEN-LAST:event_BtnAgregarPCMouseClicked
+
+    private void jTFHostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFHostActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFHostActionPerformed
+
+    private void jTFMaskActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFMaskActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFMaskActionPerformed
+
+    private void BtnSiguienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnSiguienteMouseClicked
+        host1 = String.valueOf(jTFHost.getText());
+        ip = String.valueOf(jTFIP.getText());
+        mask = String.valueOf(jTFMask.getText());
+        jPanelComputadoraAgregar.setVisible(false);
+        jPanelTipoPC.setVisible(true);
+    }//GEN-LAST:event_BtnSiguienteMouseClicked
+
+    private void BtnAgregarLaptopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarLaptopMouseClicked
+        computadoras.add(new Laptop());        
+        ((Laptop)computadoras.get(0)).setHost(host1);
+        ((Laptop)computadoras.get(0)).setIp(ip);
+        ((Laptop)computadoras.get(0)).setMask(mask);
+        ((Laptop)computadoras.get(0)).setResolution(String.valueOf(jTFResolution.getText()));
+        ((Laptop)computadoras.get(0)).setMarca(String.valueOf(jTFMarca.getText()));
+        ((Laptop)computadoras.get(0)).setResp(String.valueOf(jCBRGB.getSelectedItem()));
+        JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
+        jPanelLaptop.setVisible(false);
+    }//GEN-LAST:event_BtnAgregarLaptopMouseClicked
 
     /**
      * @param args the command line arguments
@@ -614,22 +752,28 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
     private javax.swing.JButton BtnAgregar;
+    private javax.swing.JButton BtnAgregarLaptop;
     private javax.swing.JButton BtnAgregarPC;
     private javax.swing.JButton BtnElimiar;
     private javax.swing.JButton BtnEscritorio;
     private javax.swing.JButton BtnIngresar;
     private javax.swing.JButton BtnLaptop;
     private javax.swing.JButton BtnListar;
+    private javax.swing.JButton BtnSiguiente;
     private javax.swing.JPanel PanelIngresar;
+    private javax.swing.JComboBox<String> jCBGPU;
+    private javax.swing.JComboBox<String> jCBRGB;
+    private javax.swing.JComboBox<String> jCBTypeStrorage;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -639,6 +783,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanelAgregar;
+    private javax.swing.JPanel jPanelComputadoraAgregar;
     private javax.swing.JPanel jPanelEliminar;
     private javax.swing.JPanel jPanelEliminarPC;
     private javax.swing.JPanel jPanelEscritorio;
@@ -651,12 +796,16 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelVacio;
     private javax.swing.JPanel jPanelVacio2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTFHost;
+    private javax.swing.JTextField jTFIP;
+    private javax.swing.JTextField jTFMarca;
+    private javax.swing.JTextField jTFMask;
+    private javax.swing.JTextField jTFRam;
+    private javax.swing.JTextField jTFResolution;
+    private javax.swing.JTextField jTFStorage;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
     
 }

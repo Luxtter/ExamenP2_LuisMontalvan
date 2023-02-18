@@ -16,13 +16,6 @@ public class Laptop extends Computadora{
         super();
     }
 
-    public Laptop(String marca, String resolution, String resp, boolean rgb) {
-        this.marca = marca;
-        this.resolution = resolution;
-        this.resp = resp;
-        this.rgb = rgb;
-    }
-
     public Laptop(String marca, String resolution, String resp, boolean rgb, String host, String ip, String mask) {
         super(host, ip, mask);
         this.marca = marca;
@@ -31,6 +24,30 @@ public class Laptop extends Computadora{
         this.rgb = rgb;
     }
 
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public String getMask() {
+        return mask;
+    }
+
+    public void setMask(String mask) {
+        this.mask = mask;
+    }
+    
     public String getMarca() {
         return marca;
     }
