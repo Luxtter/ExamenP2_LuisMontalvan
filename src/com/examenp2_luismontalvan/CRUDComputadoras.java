@@ -822,6 +822,8 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private void BtnEliminarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEliminarPCMouseClicked
         int pos = jCBEliminar.getSelectedIndex();
         computadoras.remove(pos);
+        jCBEliminar.removeItemAt(pos);
+        jCBIngresar.removeItemAt(pos);
     }//GEN-LAST:event_BtnEliminarPCMouseClicked
 
     private void BtnIngresarPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarPCActionPerformed
