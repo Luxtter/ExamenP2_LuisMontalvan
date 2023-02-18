@@ -50,7 +50,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         Background = new javax.swing.JPanel();
         jPanelVacio2 = new javax.swing.JPanel();
         jPanelVacio = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelIngresarPC = new javax.swing.JPanel();
         jPanelComputadoraAgregar = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jTFHost = new javax.swing.JTextField();
@@ -59,6 +59,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jTFMask = new javax.swing.JTextField();
         BtnSiguiente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jCBIngresar = new javax.swing.JComboBox<>();
+        BtnIngresarPC = new javax.swing.JButton();
         jPanelTipoPC = new javax.swing.JPanel();
         BtnEscritorio = new javax.swing.JButton();
         BtnLaptop = new javax.swing.JButton();
@@ -143,18 +147,18 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         Background.add(jPanelVacio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelIngresarPCLayout = new javax.swing.GroupLayout(jPanelIngresarPC);
+        jPanelIngresarPC.setLayout(jPanelIngresarPCLayout);
+        jPanelIngresarPCLayout.setHorizontalGroup(
+            jPanelIngresarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelIngresarPCLayout.setVerticalGroup(
+            jPanelIngresarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 415, Short.MAX_VALUE)
         );
 
-        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Background.add(jPanelIngresarPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel14.setText("Host");
 
@@ -181,6 +185,45 @@ public class CRUDComputadoras extends javax.swing.JFrame {
             }
         });
 
+        jLabel18.setText("Computadora a ingresar");
+
+        jCBIngresar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
+
+        BtnIngresarPC.setText("Ingresar");
+        BtnIngresarPC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIngresarPCActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jCBIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(BtnIngresarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(213, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCBIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnIngresarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(221, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout jPanelComputadoraAgregarLayout = new javax.swing.GroupLayout(jPanelComputadoraAgregar);
         jPanelComputadoraAgregar.setLayout(jPanelComputadoraAgregarLayout);
         jPanelComputadoraAgregarLayout.setHorizontalGroup(
@@ -188,7 +231,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
             .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
                 .addGroup(jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
-                        .addGap(82, 82, 82)
+                        .addGap(523, 523, 523)
                         .addGroup(jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTFHost, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFIP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -198,13 +241,15 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
                         .addGap(177, 177, 177)
-                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(204, Short.MAX_VALUE))
+                        .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelComputadoraAgregarLayout.setVerticalGroup(
             jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
-                .addGap(421, 421, 421)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFHost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -728,6 +773,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         ((Escritorio)computadoras.get(pos)).setTypeStorage(String.valueOf(jCBTypeStrorage.getSelectedItem()));
         ((Escritorio)computadoras.get(pos)).setResp(String.valueOf(jCBGPU.getSelectedItem()));
         jCBEliminar.addItem(host1);
+        jCBIngresar.addItem(host1);
         JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
         jPanelEscritorio.setVisible(false);
     }//GEN-LAST:event_BtnAgregarPCMouseClicked
@@ -760,6 +806,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         ((Laptop)computadoras.get(pos)).setMarca(String.valueOf(jTFMarca.getText()));
         ((Laptop)computadoras.get(pos)).setResp(String.valueOf(jCBRGB.getSelectedItem()));
         jCBEliminar.addItem(host1);
+        jCBIngresar.addItem(host1);
         JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
         jPanelLaptop.setVisible(false);
     }//GEN-LAST:event_BtnAgregarLaptopMouseClicked
@@ -776,6 +823,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         int pos = jCBEliminar.getSelectedIndex();
         computadoras.remove(pos);
     }//GEN-LAST:event_BtnEliminarPCMouseClicked
+
+    private void BtnIngresarPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarPCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnIngresarPCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -821,12 +872,14 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JButton BtnEliminarPC;
     private javax.swing.JButton BtnEscritorio;
     private javax.swing.JButton BtnIngresar;
+    private javax.swing.JButton BtnIngresarPC;
     private javax.swing.JButton BtnLaptop;
     private javax.swing.JButton BtnListar;
     private javax.swing.JButton BtnSiguiente;
     private javax.swing.JPanel PanelIngresar;
     private javax.swing.JComboBox<String> jCBEliminar;
     private javax.swing.JComboBox<String> jCBGPU;
+    private javax.swing.JComboBox<String> jCBIngresar;
     private javax.swing.JComboBox<String> jCBRGB;
     private javax.swing.JComboBox<String> jCBTypeStrorage;
     private javax.swing.JLabel jLabel1;
@@ -838,6 +891,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -846,7 +900,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanelAgregar;
     private javax.swing.JPanel jPanelComputadoraAgregar;
     private javax.swing.JPanel jPanelEliminar;
@@ -854,6 +908,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelEscritorio;
     private javax.swing.JPanel jPanelHoriz;
     private javax.swing.JPanel jPanelIngresar;
+    private javax.swing.JPanel jPanelIngresarPC;
     private javax.swing.JPanel jPanelLaptop;
     private javax.swing.JPanel jPanelListar;
     private javax.swing.JPanel jPanelListarTabla;
