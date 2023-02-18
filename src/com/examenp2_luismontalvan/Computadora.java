@@ -48,7 +48,7 @@ public abstract class Computadora {
 
     @Override
     public String toString() {
-        return "Computadora{" + "host=" + host + ", ip=" + ip + ", mask=" + mask + '}';
+        return "Host: "+host + "\nIP: " + ip + "\nMask: " + mask+"\n";
     }
     
 }

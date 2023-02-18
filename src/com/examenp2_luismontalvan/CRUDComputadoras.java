@@ -50,6 +50,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         Background = new javax.swing.JPanel();
         jPanelVacio2 = new javax.swing.JPanel();
         jPanelVacio = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jPanelComputadoraAgregar = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jTFHost = new javax.swing.JTextField();
@@ -88,8 +89,9 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanelEliminarPC = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCBEliminar = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
+        BtnEliminarPC = new javax.swing.JButton();
         PanelIngresar = new javax.swing.JPanel();
         jPanelLaptop = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -141,6 +143,19 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         Background.add(jPanelVacio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 550, -1));
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 415, Short.MAX_VALUE)
+        );
+
+        Background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel14.setText("Host");
 
         jTFHost.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +204,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jPanelComputadoraAgregarLayout.setVerticalGroup(
             jPanelComputadoraAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelComputadoraAgregarLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(421, 421, 421)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFHost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,7 +218,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 .addComponent(jTFMask, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         Background.add(jPanelComputadoraAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
@@ -511,20 +526,42 @@ public class CRUDComputadoras extends javax.swing.JFrame {
 
         Background.add(jPanelListarTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBEliminar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
+        jCBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCBEliminarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Computadora a Eliminar");
+
+        BtnEliminarPC.setText("Eliminar");
+        BtnEliminarPC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnEliminarPCMouseClicked(evt);
+            }
+        });
+        BtnEliminarPC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarPCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelEliminarPCLayout = new javax.swing.GroupLayout(jPanelEliminarPC);
         jPanelEliminarPC.setLayout(jPanelEliminarPCLayout);
         jPanelEliminarPCLayout.setHorizontalGroup(
             jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEliminarPCLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
                 .addGroup(jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(203, Short.MAX_VALUE))
+                    .addGroup(jPanelEliminarPCLayout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addGroup(jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCBEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))
+                    .addGroup(jPanelEliminarPCLayout.createSequentialGroup()
+                        .addGap(200, 200, 200)
+                        .addComponent(BtnEliminarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         jPanelEliminarPCLayout.setVerticalGroup(
             jPanelEliminarPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -532,8 +569,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
                 .addGap(142, 142, 142)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addComponent(jCBEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(BtnEliminarPC, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         Background.add(jPanelEliminarPC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 500, 420));
@@ -636,7 +675,12 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnAgregarMouseClicked
 
     private void BtnListarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnListarMouseClicked
-        
+        String s = "";
+        for (Object t : computadoras) {
+            s = computadoras.get((Integer)t)+") "+t +"\n";
+            
+        }
+        JOptionPane.showMessageDialog(null, s);
     }//GEN-LAST:event_BtnListarMouseClicked
 
     private void BtnIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarMouseClicked
@@ -644,7 +688,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnIngresarMouseClicked
 
     private void BtnElimiarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnElimiarMouseClicked
-        
+        jPanelEliminarPC.setVisible(true);
     }//GEN-LAST:event_BtnElimiarMouseClicked
 
     private void BtnElimiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnElimiarActionPerformed
@@ -674,14 +718,16 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLaptopMouseClicked
 
     private void BtnAgregarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarPCMouseClicked
-        computadoras.add(new Escritorio());        
-        ((Escritorio)computadoras.get(0)).setHost(host1);
-        ((Escritorio)computadoras.get(0)).setIp(ip);
-        ((Escritorio)computadoras.get(0)).setMask(mask);
-        ((Escritorio)computadoras.get(0)).setRam(String.valueOf(jTFRam.getText()));
-        ((Escritorio)computadoras.get(0)).setStorage(String.valueOf(jTFStorage.getText()));
-        ((Escritorio)computadoras.get(0)).setTypeStorage(String.valueOf(jCBTypeStrorage.getSelectedItem()));
-        ((Escritorio)computadoras.get(0)).setResp(String.valueOf(jCBGPU.getSelectedItem()));
+        computadoras.add(new Escritorio()); 
+        int pos = computadoras.size()-1;
+        ((Escritorio)computadoras.get(pos)).setHost(host1);
+        ((Escritorio)computadoras.get(pos)).setIp(ip);
+        ((Escritorio)computadoras.get(pos)).setMask(mask);
+        ((Escritorio)computadoras.get(pos)).setRam(String.valueOf(jTFRam.getText()));
+        ((Escritorio)computadoras.get(pos)).setStorage(String.valueOf(jTFStorage.getText()));
+        ((Escritorio)computadoras.get(pos)).setTypeStorage(String.valueOf(jCBTypeStrorage.getSelectedItem()));
+        ((Escritorio)computadoras.get(pos)).setResp(String.valueOf(jCBGPU.getSelectedItem()));
+        jCBEliminar.addItem(host1);
         JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
         jPanelEscritorio.setVisible(false);
     }//GEN-LAST:event_BtnAgregarPCMouseClicked
@@ -703,16 +749,33 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnSiguienteMouseClicked
 
     private void BtnAgregarLaptopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnAgregarLaptopMouseClicked
-        computadoras.add(new Laptop());        
-        ((Laptop)computadoras.get(0)).setHost(host1);
-        ((Laptop)computadoras.get(0)).setIp(ip);
-        ((Laptop)computadoras.get(0)).setMask(mask);
-        ((Laptop)computadoras.get(0)).setResolution(String.valueOf(jTFResolution.getText()));
-        ((Laptop)computadoras.get(0)).setMarca(String.valueOf(jTFMarca.getText()));
-        ((Laptop)computadoras.get(0)).setResp(String.valueOf(jCBRGB.getSelectedItem()));
+        jPanelLaptop.setVisible(true);
+        
+        computadoras.add(new Laptop());  
+        int pos = computadoras.size()-1;
+        ((Laptop)computadoras.get(pos)).setHost(host1);
+        ((Laptop)computadoras.get(pos)).setIp(ip);
+        ((Laptop)computadoras.get(pos)).setMask(mask);
+        ((Laptop)computadoras.get(pos)).setResolution(String.valueOf(jTFResolution.getText()));
+        ((Laptop)computadoras.get(pos)).setMarca(String.valueOf(jTFMarca.getText()));
+        ((Laptop)computadoras.get(pos)).setResp(String.valueOf(jCBRGB.getSelectedItem()));
+        jCBEliminar.addItem(host1);
         JOptionPane.showMessageDialog(null, "La computadora se agrego con exito");
         jPanelLaptop.setVisible(false);
     }//GEN-LAST:event_BtnAgregarLaptopMouseClicked
+
+    private void jCBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCBEliminarActionPerformed
+
+    private void BtnEliminarPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarPCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEliminarPCActionPerformed
+
+    private void BtnEliminarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnEliminarPCMouseClicked
+        int pos = jCBEliminar.getSelectedIndex();
+        computadoras.remove(pos);
+    }//GEN-LAST:event_BtnEliminarPCMouseClicked
 
     /**
      * @param args the command line arguments
@@ -755,16 +818,17 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JButton BtnAgregarLaptop;
     private javax.swing.JButton BtnAgregarPC;
     private javax.swing.JButton BtnElimiar;
+    private javax.swing.JButton BtnEliminarPC;
     private javax.swing.JButton BtnEscritorio;
     private javax.swing.JButton BtnIngresar;
     private javax.swing.JButton BtnLaptop;
     private javax.swing.JButton BtnListar;
     private javax.swing.JButton BtnSiguiente;
     private javax.swing.JPanel PanelIngresar;
+    private javax.swing.JComboBox<String> jCBEliminar;
     private javax.swing.JComboBox<String> jCBGPU;
     private javax.swing.JComboBox<String> jCBRGB;
     private javax.swing.JComboBox<String> jCBTypeStrorage;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -782,6 +846,7 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelAgregar;
     private javax.swing.JPanel jPanelComputadoraAgregar;
     private javax.swing.JPanel jPanelEliminar;
