@@ -190,6 +190,11 @@ public class CRUDComputadoras extends javax.swing.JFrame {
         jCBIngresar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
 
         BtnIngresarPC.setText("Ingresar");
+        BtnIngresarPC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BtnIngresarPCMouseClicked(evt);
+            }
+        });
         BtnIngresarPC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnIngresarPCActionPerformed(evt);
@@ -829,6 +834,10 @@ public class CRUDComputadoras extends javax.swing.JFrame {
     private void BtnIngresarPCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarPCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnIngresarPCActionPerformed
+
+    private void BtnIngresarPCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnIngresarPCMouseClicked
+        System.out.println(computadoras.get(jCBIngresar.getSelectedIndex()).getHost()+"#");
+    }//GEN-LAST:event_BtnIngresarPCMouseClicked
 
     /**
      * @param args the command line arguments
